@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.BlinkinConstants;
 
 public class BlinkinSubsystem extends SubsystemBase {
-    private static Spark m_led = new Spark(BlinkinConstants.kBlinkinPort);
+    private static Spark m_led = new Spark(11);
 
     
     public BlinkinSubsystem() {}

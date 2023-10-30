@@ -34,13 +34,13 @@ public class RobotContainer {
  
   private void configureBindings() {
 
-    controller.b().whileTrue(compressorOff); 
+    controller.b().whileTrue(compressorOff); //x
     controller.a().whileTrue(compressorOn);
 
     controller.dpadUp().whileTrue(pistonUp); 
     controller.dpadDown().whileTrue(pistonDown); 
 
-    controller.x().whileTrue(shoot); 
+    controller.x().whileTrue(shoot); //b
    
   }
 
