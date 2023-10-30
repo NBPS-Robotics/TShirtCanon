@@ -25,7 +25,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void robotPeriodic() {
-
+    BlinkinSubsystem.green();
     CommandScheduler.getInstance().run();
   }
 
@@ -39,6 +39,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopInit() {
+    BlinkinSubsystem.green();
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
@@ -46,6 +47,8 @@ public class Robot extends TimedRobot {
 
 
   @Override
-  public void teleopPeriodic() {}
+  public void teleopPeriodic() {
+    BlinkinSubsystem.green();
+  }
 
 }
