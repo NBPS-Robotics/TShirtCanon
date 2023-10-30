@@ -19,7 +19,7 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     
     robotContainer = new RobotContainer();
-    BlinkinSubsystem.red();
+    BlinkinSubsystem.green();
   }
 
 

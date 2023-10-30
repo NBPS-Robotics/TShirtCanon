@@ -34,7 +34,7 @@ public class BlinkinSubsystem extends SubsystemBase {
         color(BlinkinConstants.kYellow);
     }
 
-    public void green(){
+    public static void green(){
         color(BlinkinConstants.kGreen);
     }
 
@@ -52,6 +52,10 @@ public class BlinkinSubsystem extends SubsystemBase {
 
     public void off(){
         color(BlinkinConstants.kBlack);
+    }
+
+    public void sparkle(){
+        color(0.37);
     }
 
 }

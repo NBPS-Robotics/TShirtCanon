@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class PneumaticsSubsystem extends SubsystemBase{
   
+  BlinkinSubsystem led = new BlinkinSubsystem(); 
   Compressor compressor1 = new Compressor(1, PneumaticsModuleType.CTREPCM); //right
   Compressor compressor2 = new Compressor(0, PneumaticsModuleType.CTREPCM); //left
   Solenoid shoot = new Solenoid(PneumaticsModuleType.CTREPCM, 0);
@@ -19,10 +20,12 @@ public class PneumaticsSubsystem extends SubsystemBase{
   public PneumaticsSubsystem(){}
   
   public void shoot(){
+    led.sparkle();
     wait(3000); //3 second delay
     shoot.set(true);
     wait(2000); //2 second shoot
     shoot.set(false); 
+    BlinkinSubsystem.green();
   }
  
   public void pistonUp(){
