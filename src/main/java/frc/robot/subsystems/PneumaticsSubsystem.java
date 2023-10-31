@@ -21,10 +21,10 @@ public class PneumaticsSubsystem extends SubsystemBase{
   
   public void shoot(){
    // led.sparkle();
-    wait(3000); //3 second delay
-    shoot.set(true);
-    wait(2000); //2 second shoot
-    shoot.set(false); 
+    wait(2000); //3 second delay
+    //shoot.set(true);
+    wait(50); //2 second shoot
+    shoot.set(false);
    // BlinkinSubsystem.green();
   }
  
