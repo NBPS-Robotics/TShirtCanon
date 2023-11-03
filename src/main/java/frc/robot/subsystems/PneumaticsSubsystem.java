@@ -11,9 +11,10 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class PneumaticsSubsystem extends SubsystemBase{
   
   BlinkinSubsystem led = new BlinkinSubsystem(); 
+  Solenoid horn = new Solenoid(1, PneumaticsModuleType.CTREPCM, 0);
   Compressor compressor1 = new Compressor(1, PneumaticsModuleType.CTREPCM); //right
   Compressor compressor2 = new Compressor(0, PneumaticsModuleType.CTREPCM); //left
-  Solenoid shoot = new Solenoid(PneumaticsModuleType.CTREPCM, 0);
+  Solenoid shoot = new Solenoid(0, PneumaticsModuleType.CTREPCM, 0);
   DoubleSolenoid piston = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 4, 5);
 
 
@@ -29,12 +30,12 @@ public class PneumaticsSubsystem extends SubsystemBase{
   }
  
   public void pistonUp(){
-    piston.set(Value.kForward);
+    piston.set(Value.kReverse);
 
   }
 
   public void pistonDown(){
-    piston.set(Value.kReverse);
+    piston.set(Value.kForward);
   }
 
   public void compressorOn(){
@@ -46,7 +47,16 @@ public class PneumaticsSubsystem extends SubsystemBase{
     compressor1.disable();
     compressor2.disable();
   }
- 
+
+  public void hornOn(){
+   horn.set(true);
+  }
+  
+  public void hornOff(){
+    horn.set(false);
+  }
+
+
   @Override
   public void periodic(){}
 

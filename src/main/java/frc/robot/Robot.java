@@ -5,21 +5,27 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.motorcontrol.Talon;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.subsystems.BlinkinSubsystem;
+import frc.robot.subsystems.DriveSubsystem;
 
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
 
   private RobotContainer robotContainer;
 
+
+
   
   @Override
   public void robotInit() {
     
-    robotContainer = new RobotContainer();
+    robotContainer = new RobotContainer();    
     BlinkinSubsystem.green();
+   
   }
 
 
@@ -43,12 +49,12 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
-  }
+  }  
 
 
   @Override
   public void teleopPeriodic() {
-    BlinkinSubsystem.green();
+   robotContainer.driveSubsystem.arcadeDrive(RobotContainer.controller.getRawAxis(1), RobotContainer.controller.getRawAxis(4));
   }
 
 }
